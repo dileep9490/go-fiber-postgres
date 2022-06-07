@@ -115,9 +115,9 @@ func (r *Repository) GetBookByID(context *fiber.Ctx) error {
 
 func (r *Repository) SetupRoutes(app *fiber.App) {
 	api := app.Group("/api")
-	api.Get("/hello",func(c *fiber.Ctx) error {
+	api.Get("/hello", func(c *fiber.Ctx) error {
 		c.JSON(&fiber.Map{
-			"message":"hello",
+			"message": "hello",
 		})
 		return nil
 	})
@@ -158,6 +158,6 @@ func main() {
 	app := fiber.New()
 	r.SetupRoutes(app)
 
-	app.Listen(":8080")
+	app.Listen(os.Getenv("PORT"))
 
 }
