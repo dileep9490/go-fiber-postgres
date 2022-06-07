@@ -115,6 +115,12 @@ func (r *Repository) GetBookByID(context *fiber.Ctx) error {
 
 func (r *Repository) SetupRoutes(app *fiber.App) {
 	api := app.Group("/api")
+	api.Get("/hello",func(c *fiber.Ctx) error {
+		c.JSON(&fiber.Map{
+			"message":"hello",
+		})
+		return nil
+	})
 	api.Post("/create_books", r.CreateBook)
 	api.Delete("delete_book/:id", r.DeleteBook)
 	api.Get("/get_books/:id", r.GetBookByID)
