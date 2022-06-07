@@ -1,6 +1,6 @@
 module github.com/dileep9490/go-fiber-postgres
 
-go 1.18
+go 1.13
 
 require (
 	github.com/gofiber/fiber/v2 v2.34.0
