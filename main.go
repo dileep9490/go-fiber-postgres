@@ -157,7 +157,7 @@ func main() {
 
 	app := fiber.New()
 	r.SetupRoutes(app)
-
+	print(os.Getenv("PORT"))
 	app.Listen(os.Getenv("PORT"))
 
 }
