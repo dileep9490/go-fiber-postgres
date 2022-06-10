@@ -123,7 +123,7 @@ func (r *Repository) SetupRoutes(app *fiber.App) {
 	})
 	app.Get("/",func(c *fiber.Ctx) error {
 		c.JSON(&fiber.Map{
-			"message" : "u are at Main page to read do go to https://github.com/dileep9490/go-fiber-postgres/tree/main#readme",
+			"message" : "u are at Main page to read  go to https://github.com/dileep9490/go-fiber-postgres/tree/main#readme",
 		})
 		return nil
 	})
