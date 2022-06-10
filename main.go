@@ -128,6 +128,10 @@ func (r *Repository) SetupRoutes(app *fiber.App) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+    if port == "" {
+        port = "8080"
+    }
 
 	err := godotenv.Load()
 	if err != nil {
@@ -158,6 +162,6 @@ func main() {
 	app := fiber.New()
 	r.SetupRoutes(app)
 
-	app.Listen(os.Getenv("PORT"))
+	app.Listen(":"+port)
 
 }
